@@ -100,17 +100,26 @@
 #     count+=1
 # print(count)
 
-n = 144
-org = n 
-res = 0
-while(n!=0):
-    dig = n%10
-    fact = 1
-    for i in range(2,dig+1):
-        fact *=i
-    res+=fact 
-    n=n//10
-if(res == org):
-    print("strong")
-else :
-     print("not strong")
+# n = 144
+# org = n 
+# res = 0
+# while(n!=0):
+#     dig = n%10
+#     fact = 1
+#     for i in range(2,dig+1):
+#         fact *=i
+#     res+=fact 
+#     n=n//10
+# if(res == org):
+#     print("strong")
+# else :
+#      print("not strong")
+
+
+n =12
+if n%3==0:
+    for i in range (-n,n+1,3):
+
+        print(i,end =" ")
+else:
+    print("enter the even no. which is divisible by 3")
