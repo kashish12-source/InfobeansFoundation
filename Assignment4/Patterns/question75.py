@@ -20,7 +20,7 @@ for i in range(1,8):
             else:
                 print("_",end="")
         print()
-#   *
+#    *
 #   *_*
 #  *_*_*
 # *_*_*_*
