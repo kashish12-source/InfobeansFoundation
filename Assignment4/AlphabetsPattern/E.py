@@ -1,11 +1,11 @@
-
-for i in range(1, 8):
-    for j in range(1, 6):
+n=int(input("Enter a no. here : "))
+for i in range(1, n):
+    for j in range(1, n-2):
 
         if j == 1:
             print("*", end="")
 
-        elif i == 1 or i == 4 or i == 7:
+        elif i == 1 or i == n//2 or i == n-1:
             print("*", end=" ")
 
         else:
