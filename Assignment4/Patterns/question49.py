@@ -6,12 +6,12 @@ for i in range(5,0,-1):
             if(i==j) or i == 5 or j==1:
                 print(i,end="")
             else:
-                print(" ",end="")   
+                print("_",end="")   
 
     print()
 
 # 55555
-#  4  4
-#   3 3
+#  4__4
+#   3_3
 #    22
 #     1

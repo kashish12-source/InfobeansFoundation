@@ -5,3 +5,8 @@ for i in range(1,6):
         else:
             print(1,end="")
     print()
+# 1
+# 10
+# 101
+# 1010
+# 10101

@@ -1,13 +1,12 @@
-k=69
-for i in range(5,0,-1):
-
+k=65
+for i in range(1,6):
     for j in range(1,i+1):
         print(chr(k),end="")
         
+    k+=1
     print()
-    k-=1
-# EEEEE
-# DDDD
-# CCC
-# BB
 # A
+# BB
+# CCC
+# DDDD
+# EEEEE

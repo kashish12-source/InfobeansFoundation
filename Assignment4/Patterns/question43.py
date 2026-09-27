@@ -11,3 +11,9 @@ for i in range(1,6):
             else:
                 print("*",end="")
     print()
+
+#     1
+#    11
+#   1*1
+#  1**1
+# 11111

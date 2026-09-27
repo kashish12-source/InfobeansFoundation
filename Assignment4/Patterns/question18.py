@@ -8,3 +8,8 @@ for i in range(1,6):
             print(" ",end="")
             k+=1
     print()
+# A
+# AB
+# A C
+# A  D
+# ABCDE

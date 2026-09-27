@@ -8,11 +8,11 @@ for i in range(5,0,-1):
                 print(k,end="")
                 k+=1
             else:
-                print(" ",end="")
+                print("_",end="")
                 k+=1
     print()
 # 12345
-#  1  4
-#   1 3
+#  1__4
+#   1_3
 #    12
 #     1
