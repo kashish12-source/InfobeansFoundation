@@ -1,7 +1,7 @@
 # 58) WAP to convert decimal number into binary number without using array
 
 # n = int(input("Enter the decimal no. here : "))
-n=10
+n=20
 org =n 
 res =""
 while(n!=0):

@@ -1,12 +1,13 @@
 # 43) WAP to convert binary number into decimal number
+n = int(input("Enter binary number: "))
 
-n = 20
-org = n
-res = ""
+result = 0
+power = 0
 
-while(n != 0):
-    dig = n % 2
-    res = str(dig) + res  
-    n = n // 2
+while n > 0:
+    digit = n % 10
+    decimal = result + digit * (2 ** power)
+    power += 1
+    n = n // 10
 
-print(res) 
+print(result)
