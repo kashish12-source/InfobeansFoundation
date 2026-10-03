@@ -22,12 +22,20 @@
 # 1, 2, 3, 4 is the longest
 # consecutive subsequence.
 
-arr = [1,9,3,10,4,20,2]
-max = 0
+arr = [ 1,9,3,10,4,20,2]
+for i in range(len(arr)-1):
+    for j in range(i+1,len(arr)):
+        if arr[i]>arr[j]:
+            arr[i],arr[j] = arr[j],arr[i]
+print(arr)
+max =0 
 for i in range(len(arr)-1):
     count =0
     k=1
-    current = arr[i]
     for j in range(i+1,len(arr)):
-        
-print(max)
+        if (arr[j] == arr[i]+k):
+            count+=1
+        k+=1
+    if max <count :
+        max = count 
+print(max+1)
