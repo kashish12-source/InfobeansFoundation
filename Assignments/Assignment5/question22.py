@@ -13,3 +13,21 @@
 # 2 8 3 1 here sum is 2*0+8*1+3*2+1*3 = 17
 # 8 3 1 2 here sum is 8*0+3*1+1*2+2*3 = 11
 # Here the max sum is 29
+arr = [8,3,1,2]
+n = len(arr)
+max = 0
+while(n!=0):
+    item = arr[len(arr)-1]
+    sum =0 
+    k =0
+    for i in range(len(arr)-1 , 0 , -1):
+        arr[i],arr[i-1] = arr[i-1],arr[i]
+    arr[0] = item 
+    for i in arr:
+        sum +=i*k
+        k+=1
+    if max < sum :
+        max = sum 
+    n-=1
+print(max)
+
