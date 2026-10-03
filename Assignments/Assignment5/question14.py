@@ -1,5 +1,5 @@
 # Find the first repeating element in array of integers
-arr = [1,2,3,3,5,7,6,6,9]
+arr = [1,5,3,3,5,7,6,6,9]
 if len(arr)==1:
     print("No repeating elements their")
 
