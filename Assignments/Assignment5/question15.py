@@ -9,8 +9,8 @@
 # the only number occuring once.
 # Hence, the output is 3.
 
-arr = [-1, 2, -1, 3, 2]
-for i in range(len(arr)-1):
+arr = [1,1,1,1,5]
+for i in range(len(arr)):
     count=0
     for j in range(len(arr)):
         if arr[i]==arr[j]:
@@ -18,3 +18,5 @@ for i in range(len(arr)-1):
     if count == 1:
         print(arr[i])
         break
+else:
+    print("ALL elements are repeting")

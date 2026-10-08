@@ -1,0 +1,8 @@
+m = [[1,2,3],[4,5,6],[7,8,9]]
+for i in range(len(m)):
+    for j in range(len(m[i])):
+        if i<j or i==j :
+            print(m[i][j],end="")
+        elif i>j:
+            print(" ",end="")
+    print()
