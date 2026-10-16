@@ -10,5 +10,5 @@ student = {
         }
     }
 }
-result = student.get("","unknown")
+result = student.get("details",{}.get("education",{}.get("college","unkown")))
 print(result)
