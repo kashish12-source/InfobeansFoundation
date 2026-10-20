@@ -13,5 +13,5 @@ print(d_sort)
 
 keys = list(d_sort.keys())
 
-print(f"The second most frequent is : {keys[-2]}")
+print(f"The second most frequent is : {keys[-2]} : {d[keys[-2]]}")
 
