@@ -7,7 +7,7 @@ for i in s:
             d[i]+=1
         else:
             d[i]=1
-
+print(d)
 max =0
 res = ""
 for i in d.keys():
