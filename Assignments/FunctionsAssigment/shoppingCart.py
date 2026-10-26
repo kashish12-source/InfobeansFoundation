@@ -8,3 +8,4 @@
 # •	Apply discounts based on purchase value.
 # •	Generate a final bill.
 # Bonus: Implement removing an item and checking product availability.
+
