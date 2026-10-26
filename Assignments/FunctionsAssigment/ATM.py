@@ -16,6 +16,7 @@ def data():
     }
     return d
 count=0
+d = data()
 def verify_pin(pin):
     global count
     if count<3:
@@ -31,26 +32,23 @@ def verify_pin(pin):
     
 
 def balance(pin):
-    d = data()
-    
     return d[pin]["balance"]
         
 def deposit(pin,bal):
-    d = data ()
+    # d = data ()
     for i in d.keys():
         if pin in d:
             d[pin]["balance" ] +=bal
             return d[pin]["balance"]
 def withdrawal(pin,bal):
-    d = data()
-    for i in d.keys():
-        if pin in d:
-            if bal > d[pin]["balance"]:
-                
-                return False
-            else:
-                d[pin]["balance" ] -=bal
-                return d[pin]["balance"]
+
+    if bal <=0:
+        return False
+    if bal>d[pin]["balance"]:
+        return False
+    d[pin]["balance"]-=bal
+    return d[pin]["balance"]
+    
 def exit():
     return False
 
@@ -76,16 +74,30 @@ if verify_pin(pin):
         inputs = int(input("Enter you task here : "))
         if inputs == 1:
             print(f"The balance in your account is : {balance(pin)}")
+
+
+
         elif inputs == 2:
             bal = float(input("Enter the balance you want to deposit: "))
+            print(f"Balance before withdrawal is :{balance(pin)}")
+            print()
 
             print(f"Balance after deposite the money is : {deposit(pin,bal)}")
+
+
         elif inputs ==3 :
             bal = float(input("Enter the balance you want to withdrawal: "))
-            if(withdrawal(pin,bal)):
-                print(f"Balance after withdrawal money is : {withdrawal(pin,bal)}")
+            print(f"Balance before withdrawal is :{balance(pin)}")
+            result = withdrawal(pin,bal)
+            if result:
+                
+                print(f"Balance after withdrawal money is : {result}")
+                
             else:
                 print("The balance is not enough")
+
+
+
         elif inputs == 4 :
             f =False
         else:
