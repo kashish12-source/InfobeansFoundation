@@ -89,10 +89,10 @@ print(f"SALARY : {salary}")
 print()
 if bonous < 0:
     print(f"DEDUCTION : {bonous}")
-    salary -= bonous
+    salary =salary-bonous
 else:
     print(f"BONOUS : {bonous}")
-    salary += bonous
+    salary =salary + bonous
 print()
 print(f"FINAL SALARY IS : {salary}")
 
