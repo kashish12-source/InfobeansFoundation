@@ -86,40 +86,126 @@ def menu():
     }
     return items
 
-choices = []
+# choices = []
 
 item = menu()
+    
 def select_items():
-    f = True
-    while(f):
-        print("Press 1 for MainCourse")
-        print("Press 2 for Desserts")
-        print("Press 3 for Chinees")
-        print("Press 4 for Drinks")
-        print('Press 5 for exit')
-        chooice = int(input("Enter you choice here : "))
-        if chooice == 1:
-            j=1
-            for i in item.keys():
-                print(f"Press {j} for : {item[i]}")
-                j+=1
-            print("Press 'y' for choose items ")
-            print("Press 'x' for exit()")
+    choices = []
+    categories = {
+        1: "Main Course",
+        2: "Dessert",
+        3: "Chinees",
+        4: "Drinks"
+    }
+    print()
+    while True:
+        print("\n1. Main Course")
+        print("2. Desserts")
+        print("3. Chinese")
+        print("4. Drinks")
+        print("5. Exit")
+        print()
+        choose = int(input("Enter category number: "))
+        print()
+        if choose == 5:
+            break
+
+        if choose not in categories:
+            print("Invalid category")
+            continue
+
+        category = categories[choose]
+        available = item[category]
+
+        # Display items
+        items = {}
+
+        for name, price in available.items():
+            if isinstance(price, dict):
+                items.update(price)
+            else:
+                items[name] = price
+
+        item_list = list(items.items())
+
+        for i, (name, price) in enumerate(item_list, 1):
+            print(f"{i}. {name} : Rs. {price}")
+        print()
+        item_no = int(input("Choose item number: "))
+        print()
+        if item_no < 1 or item_no > len(item_list):
+            print("Invalid item number")
+            continue
+
+        quantity = int(input("Enter quantity: "))
+
+        name, price = item_list[item_no - 1]
+        cost = price * quantity
+        choices.append(cost)
+        print()
+        print(f"{name} x {quantity} = Rs. {cost}")
+
+    return choices
+
+    
+
+
+    # f = True
+    # while(f):
+    #     print("Press 1 for MainCourse")
+    #     print("Press 2 for Desserts")
+    #     print("Press 3 for Chinees")
+    #     print("Press 4 for Drinks")
+    #     print('Press 5 for exit')
+    #     chooice = int(input("Enter you choice here : "))
+    #     if chooice == 1:
+    #         j=1
+    #         for i in item.keys():
+    #             print(f"Press {j} for : {item[i]}")
+    #             j+=1
+    #         print("Press 'y' for choose items ")
+    #         print("Press 'x' for exit()")
             
-            g= True
-            while(g):
+    #         g= True
+    #         while(g):
                 
-                n = int(input("Enter your choice here : "))
-                choices.append(item[n])
-                print("Press 2 for ")
+    #             n = input("Enter your choice here : ")
+    #             print("choose the main ")
+    #             choices.append(item[n])
+    #             print("Press 2 for ")
                 
 
 
-def calculate_bill():
-    pass
+def calculate_bill(choices):
 
-def apply_discount():
-    pass
+    sum =0
+    for i in choices:
+        sum+=i
+    return sum
+
+def apply_discount(sum):
+    if sum >=5000:
+        # give discount of the 10 %
+        x = sum
+        sum = sum - (sum/10)
+        if x == 5000:
+            print(f"Your total bill is of 5000 so we give discount of 10% ")
+            print(f"\nSo the final bill is {sum}")
+        elif x >5000:
+            print(f"Your total bill is greater than 5000 so we give discount of 10% ")
+            print(f"\nSo the final bill is {sum}")
+        
+        
+    elif 3000<=sum <5000:
+       x =sum
+       sum =sum - (sum/20)
+       print("Your total bill is greater than 3000 so you get 5% of discount ")
+       print(f"\nSo your final bill is : {sum}")
+    else:
+        print("You are not elidible for the discount ")
+        print(f"\nSo the total is  : {sum}")
+
 
 print("_______________________________________________________________________________________________________")
 print()
@@ -204,3 +290,8 @@ print("\t\tLatte :230")
 
 print("_______________________________________________________________________________________________________")
 
+choices = select_items()
+total = calculate_bill(choices)
+print(f"Your total price is : {total}")
+
+apply_discount(total)
