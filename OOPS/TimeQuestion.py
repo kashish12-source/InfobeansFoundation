@@ -9,11 +9,30 @@ class Time:
 
     def add (self , t1,t2):
         temp = Time(0,0,0)
-        
+        temp.__hr = self.__hr + t1.__hr +t2.__hr
+        temp.__min = self.__min + t1.__min + t2.__min
+        temp.__sec = self.__sec +t1.__sec + t2.__sec
+
+        if temp.__sec >=60:
+            x = temp.__sec 
+            
+            temp.__min+=temp.__sec //60
+            temp.__sec = x%60
+        if temp.__min >=60:
+            x = temp.__min
+
+            temp.__hr += temp.__min//60
+            temp.__min = x%60
+
+        return temp
+
+
+
+
 
 
     def display(self):
-        pass 
+        print(f"{self.__hr} : {self.__min} : {self.__sec}")
 
     def set_hr(self ,hr):
         self.__hr = hr 
@@ -36,6 +55,6 @@ class Time:
 
 t1 = Time(2,23,30)
 t2 = Time(3,40,54)
-t3 = Time(4,23,60)
+t3 = Time(0,0,0)
 t4 = t3.add(t1,t2)
 t4.display()
