@@ -14,7 +14,7 @@ class Employee:
         days_30 = ['april', 'june','september','november']
         
         if (self.__month).lower() == 'febuary':
-            if (self.__year %4 ==0 and self.__year %100 !=0)and self.__year%400==0:
+            if (self.__year %4 ==0 and self.__year %100 !=0)or self.__year%400==0:
                 feb_days = 29
                 salary_per_day = self.__salary //feb_days
                 return self.__present_days*salary_per_day
