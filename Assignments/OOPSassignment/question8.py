@@ -16,22 +16,22 @@ class TrafficLight:
 
         self.__color = self.__colors[next_index]
 
-    def run (self):
+    def run (self,n):
         count = 0 
-        while(count<3):
+        while(count<n):
             print("Traffic Light:" ,self.check_color())
 
             time.sleep(self.__duration)  #this will tell the python that you have to execute the code after the particular time 
-            
 
-            self.change_color()
+
+            self.change_color() 
 
             if self.__color =="red":
                 count +=1
         print("Traffic light simmulation stopped ")
 
-t1 = TrafficLight("yellow")
-t1.run()
+t1 = TrafficLight("red")
+t1.run(7)
 
 
 
