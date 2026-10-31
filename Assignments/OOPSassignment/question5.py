@@ -23,6 +23,13 @@ class Book :
     def set_author(self,author):
         self.__author = author 
 
+    def get_title(self):
+        print(self.__title)
+    
+    def get_author (self):
+        print(self.__author)
+
+
     def remove_book(self):
         if self.__ISBN in Book.collections:
             Book.collections.remove(self.__ISBN)
