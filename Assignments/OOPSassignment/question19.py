@@ -6,13 +6,13 @@ class TripPlanner:
     
     def search_flights(self):
         for key , val in self.__flights.items():
-            if key !=0:
+            if val !=0:
                 print(f"flight name : {key}")
                 print(f"seats available is : {val}")
     
     def search_hotels(self):
         for key , val in self.__hotels.items():
-            if key !=0:
+            if val !=0:
                 print(f"hotel name : {key}")
                 print(f"rooms available is : {val}")
     
