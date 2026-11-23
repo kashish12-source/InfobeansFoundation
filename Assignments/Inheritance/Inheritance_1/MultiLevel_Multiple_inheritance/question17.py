@@ -5,7 +5,6 @@
 
 # Add certification system.
 
-
 class Course : 
     
     __course_collection = {}

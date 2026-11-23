@@ -16,52 +16,42 @@ class Father:
         self.__surname = surname
     
     
-    def get_f_name (self):
-        return self.__name
-    
-    
-    def get_f_age(self):
-        return self.__age
+    def get_f_details(self):
+        return self.__name,self.__age,self.__surname
 
-    
-    def get_surname (self):
-        return self.__surname
     
 class Mother :
     
-    def __init__(self,name ,age):
-        self.__name = name 
-        self.__age = age 
+    def __init__(self,m_name ,m_age):
+        self.__m_name = m_name 
+        self.__m_age = m_age 
         
-    def get_m_name (self):
-        return self.__name
-    
-    def get_m_age(self):
-        return self.__age
+    def get_m_details(self):
+        return self.__m_age,self.__m_name
 
 
-class Childeren(Father,Mother):
-    def __init__(self,f_name,mother,surname,name, m_name,age):
-        Father.__init__(f_name,surname)
+class Children(Father,Mother):
+    def __init__(self,f_name,f_age,f_surname,m_name,m_age,c_name,c_age):
+        # super().__init__(f_name,f_age,f_surname)
+        # super().__init__(m_name,m_age)
+        Father.__init__(self,f_name,f_age,f_surname)
+        Mother.__init__(self,m_name,m_age)
+        
+        self.__name = c_name 
+        self.__age = c_age 
 
-        Mother.__init__(m_name)
+    def display(self):
+        f_name ,f_age,f_surname = self.get_f_details()
+        m_age,m_name = self.get_m_details()
+        print(f"Father's Name : {f_name} {f_surname}")
+
+        print(f"Mother's Name : {m_name} {f_surname }")
+
+        print(f"Child's Name : {self.__name} {f_surname}")
+
+        print(f"Child's age : {self.__age}")
+
+c = Children("Dharmendra",47,"Vishnoi","Laxmi",45,"Kashish",20)
+c.display()
 
 
-
-        self.__name = name 
-        self.__age = age 
-
-    
-    def details(self):
-        mother_name = self.get_m_name()
-        father_name = self.get_f_name()
-        surname = self.get_surname()
-        print(f"child's Name  : {self.__name} {surname} \nFather's Name : {father_name} \n Mother's Name : {mother_name} \nAge : {self.__age}")
-
-f = Father("Dharmendra",47,"Vishnoi")
-m = Mother("Laxmi",43)
-c = Childeren("Kashish",20)
-c.details()
-
-
-# ask to sir 
